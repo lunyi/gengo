@@ -111,6 +111,9 @@ func (g *GeneratorArgs) AddFlags(fs *pflag.FlagSet) {
 
 // LoadGoBoilerplate loads the boilerplate file passed to --go-header-file.
 func (g *GeneratorArgs) LoadGoBoilerplate() ([]byte, error) {
+
+	fmt.Sprintf("GoHeaderFilePath: %s\n\n", g.GoHeaderFilePath)
+
 	b, err := ioutil.ReadFile(g.GoHeaderFilePath)
 	if err != nil {
 		return nil, err
